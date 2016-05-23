@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RailCommandeer</string>
+
+    <string name="drawer_item_crossfade_drawer_layout_drawer">RailCommander</string>
+    <string name="drawer_item_compact_header">test1</string>
+    <string name="drawer_item_action_bar_drawer">test2</string>
+    <string name="drawer_item_multi_drawer">test3</string>
+    <string name="drawer_item_non_translucent_status_drawer">test4</string>
+    <string name="drawer_item_advanced_drawer">advecned</string>
+    <string name="drawer_item_section_header">test5</string>
+    <string name="drawer_item_open_source">test6</string>
+    <string name="drawer_item_contact">test7</string>
+</resources>
