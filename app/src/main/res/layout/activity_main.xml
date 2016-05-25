@@ -14,20 +14,10 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <TextView
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:clickable="true"
-            android:onClick="onClick"
-            android:textSize="21dp"
-            android:gravity="center_vertical"
-            android:textColor="@color/BlackGrey"
-            android:text="Rechercher un trajet ?"
-            android:layout_marginTop="70dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="7dp"
-            android:layout_marginBottom="7dp"
-            android:background="@color/White" />
+    <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/listView" android:layout_below="@+id/toolbar"/>
+
 
 </RelativeLayout>
