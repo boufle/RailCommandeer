@@ -6,9 +6,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import com.dd.CircularProgressButton;
 import com.flaviofaria.kenburnsview.KenBurnsView;
-import com.semoncat.FloatLabeledEditText;
 import fr.railcommandeer.app.R;
 
 /**
@@ -39,12 +39,12 @@ public class LoginDialog extends AppCompatActivity {
 
 
     public void login(View view) {
-        FloatLabeledEditText pass = (FloatLabeledEditText) findViewById(R.id.password);
-        FloatLabeledEditText user = (FloatLabeledEditText) findViewById(R.id.txt_name);
+        EditText pass = (EditText) findViewById(R.id.password);
+        EditText user = (EditText) findViewById(R.id.txt_name);
         CircularProgressButton btn = (CircularProgressButton) findViewById(R.id.btn_login);
         btn.setIndeterminateProgressMode(true);
         btn.setProgress(1);
-        user.getTextString();
+      //  user.getTextString();
     }
 
     public void cancel(View view) {

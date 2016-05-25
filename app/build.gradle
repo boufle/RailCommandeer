@@ -62,12 +62,9 @@ dependencies {
 
     //Optional for drag and drop
     compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.1.0'
-    compile "com.github.semoncat.floatlabelededittext:library:+"
 
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile group: 'commons-codec', name: 'commons-codec', version: '1.5'
 
-    //Optional for twoway  (coming soon)
-    //compile 'com.github.gabrielemariotti.cards:cardslib-extra-twoway:2.1.0'
 
 }

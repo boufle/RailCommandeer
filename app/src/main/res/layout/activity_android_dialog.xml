@@ -25,33 +25,34 @@
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary"
                     android:elevation="4dp" />
-            <com.semoncat.FloatLabeledEditText
+            <EditText
                     xmlns:app="http://schemas.android.com/apk/res-auto"    android:id='@+id/txt_name'
                      android:layout_width='fill_parent'
                     android:layout_height='wrap_content'
                     android:hint="Nom d'utilisateur"
-                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/BlackGrey"
-                    android:textColorHint="@color/BlackGrey" android:textColorLink="@color/BlackGrey"
+                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/White"
+                    android:textColorHint="@color/White" android:textColorLink="@color/BlackGrey"
                     android:textColorHighlight="@color/BlackGrey"
-                    app:fletFloatingHint="Nom d'utilisateur" >
+                      >
 
 
                 <requestFocus />
-            </com.semoncat.FloatLabeledEditText>
-            <com.semoncat.FloatLabeledEditText
+            </EditText>
+            <EditText
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id='@+id/password'
 
                     android:layout_width='fill_parent'
                     android:layout_height='wrap_content' android:hint='Mot de passe'
-                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/BlackGrey"
-                    android:textColorHint="@color/BlackGrey" android:textColorLink="@color/BlackGrey"
+                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/White"
+                    android:textColorHint="@color/White" android:textColorLink="@color/BlackGrey"
                     android:textColorHighlight="@color/BlackGrey"
-                    app:fletFloatingHint="Mot de passe" >
+                   >
 
 
 
-            </com.semoncat.FloatLabeledEditText>
+            </EditText>
+
 
             <LinearLayout
                     android:layout_width='match_parent'

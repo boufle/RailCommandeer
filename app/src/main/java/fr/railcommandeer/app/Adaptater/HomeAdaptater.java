@@ -60,17 +60,18 @@ public class HomeAdaptater  extends BaseAdapter {
                 context.GetClicked(position);
             }
         });
+        Picasso px = Picasso.with(context);
+        //px.setIndicatorsEnabled(true);
         if(position   == 0){
-            Picasso.with(context).load((R.drawable.trainsearch)).into(txt);
+            px.load((R.drawable.trainsearch)).into(txt);
 
         }else if(position   == 1){
          //  txt.setImageResource(R.drawable.trainrecherche);
-            Picasso.with(context).load((R.drawable.trainrecherche)).into(txt);
+            px.load((R.drawable.trainrecherche)).into(txt);
 
         }else {
            // txt.setImageResource(R.drawable.tranplan);
-            Picasso.with(context).load((R.drawable.tranplan)).into(txt);
-
+            px.load((R.drawable.tranplan)).into(txt);
         }
 
 

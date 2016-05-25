@@ -43,9 +43,9 @@ public class SearchTrainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_ACTION_BAR);
+      /*  requestWindowFeature(Window.FEATURE_ACTION_BAR);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
         setContentView(R.layout.activity_searchtrainactivity);
         SearchCard searchCard = new SearchCard(getApplicationContext());
         CardHeader header = new CardHeader(getApplicationContext());
@@ -63,8 +63,8 @@ public class SearchTrainActivity extends AppCompatActivity {
         //cardView.setCard(searchCard);
         setDateTimeField();
         // Handle Toolbar
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    /*    final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
         getSupportActionBar().setTitle(R.string.drawer_item_compact_header);
 
         //set the back arrow in the toolbar

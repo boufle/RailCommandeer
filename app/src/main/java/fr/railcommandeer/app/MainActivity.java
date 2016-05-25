@@ -26,7 +26,9 @@ import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.materialdrawer.util.DrawerUIUtils;
 import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
 import com.mikepenz.materialize.util.UIUtils;
+import fr.railcommandeer.app.Adaptater.DealAdaptater;
 import fr.railcommandeer.app.Adaptater.HomeAdaptater;
+import fr.railcommandeer.app.Materials.DealItent;
 import fr.railcommandeer.app.Navigation.LoginDialog;
 import fr.railcommandeer.app.Navigation.NavigationDrawer;
 
@@ -84,6 +86,25 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(intent);
             }
         }
+        else if( id == 2 ){
+            Intent intent = null;
+            intent = new Intent(MainActivity.this, DealItent.class);
+
+            if (intent != null) {
+                MainActivity.this.startActivity(intent);
+            }
+        }
+       /* else if( id == -1 ){
+            ListView yourListView = (ListView) findViewById(R.id.listView);
+
+            HomeAdaptater customAdapter = new HomeAdaptater(this);
+
+            yourListView.setAdapter(customAdapter);
+        }*/
+
+
+
+
 
     }
 
