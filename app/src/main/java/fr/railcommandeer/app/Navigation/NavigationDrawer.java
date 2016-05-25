@@ -89,16 +89,31 @@ public class NavigationDrawer {
                 .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName("Accueil").withIcon(GoogleMaterial.Icon.gmd_home).withIdentifier(1),
-                        new PrimaryDrawerItem().withName("Mon Compte").withIcon(GoogleMaterial.Icon.gmd_account_circle).withIdentifier(2).withSelectable(false),
-                         new PrimaryDrawerItem().withDescription("Consulter vos reservations").withName("Mes commandes").withIcon(GoogleMaterial.Icon.gmd_card_travel).withIdentifier(3),
+                        new PrimaryDrawerItem().withName("Recherche").withIcon(GoogleMaterial.Icon.gmd_directions_transit).withIdentifier(2),
+                        new PrimaryDrawerItem().withName("Mon Compte").withIcon(GoogleMaterial.Icon.gmd_account_circle).withIdentifier(3).withSelectable(false),
+                         new PrimaryDrawerItem().withDescription("Consulter vos reservations").withName("Mes commandes").withIcon(GoogleMaterial.Icon.gmd_card_travel).withIdentifier(4),
                         new SectionDrawerItem().withName("Autre"),
-                        new SecondaryDrawerItem().withName("A propos").withIcon(GoogleMaterial.Icon.gmd_help_outline).withIdentifier(4)
+                        new SecondaryDrawerItem().withName("A propos").withIcon(GoogleMaterial.Icon.gmd_help_outline).withIdentifier(5)
                 ) // add the items we want to use with our Drawer
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem instanceof Nameable) {
-                            Toast.makeText(mainActivity, ((Nameable) drawerItem).getName().getText(mainActivity), Toast.LENGTH_SHORT).show();
+
+                            if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Mon Compte")){
+                                mainActivity.GetClicked(10);
+                            }else  if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Recherche")){
+                                mainActivity.GetClicked(0);
+                            }else  if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Consulter vos reservations")){
+                                mainActivity.GetClicked(1);
+                            }else  if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Accueil")){
+                                mainActivity.GetClicked(-1);
+                            }else  if(((Nameable) drawerItem).getName().getText(mainActivity).equals("A propos")){
+                                mainActivity.GetClicked(0);
+                            }else {
+
+                            }
+                            //Toast.makeText(mainActivity, , Toast.LENGTH_SHORT).show();
                         }
                         //we do not consume the event and want the Drawer to continue with the event chain
                         return false;

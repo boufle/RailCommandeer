@@ -27,6 +27,7 @@ import com.mikepenz.materialdrawer.util.DrawerUIUtils;
 import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
 import com.mikepenz.materialize.util.UIUtils;
 import fr.railcommandeer.app.Adaptater.HomeAdaptater;
+import fr.railcommandeer.app.Navigation.LoginDialog;
 import fr.railcommandeer.app.Navigation.NavigationDrawer;
 
 import java.io.BufferedInputStream;
@@ -71,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
         if(id == 0){
             Intent intent = null;
             intent = new Intent(MainActivity.this, SearchTrainActivity.class);
+
+            if (intent != null) {
+                MainActivity.this.startActivity(intent);
+            }
+        }else if( id == 10 ){
+            Intent intent = null;
+            intent = new Intent(MainActivity.this, LoginDialog.class);
 
             if (intent != null) {
                 MainActivity.this.startActivity(intent);

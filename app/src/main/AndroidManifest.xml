@@ -25,6 +25,10 @@
                   android:theme="@style/MaterialDrawerTheme.TranslucentStatus">
 
         </activity>
+        <activity android:name=".Navigation.LoginDialog"
+                  android:theme="@style/MaterialDrawerTheme.TranslucentStatus">
+
+        </activity>
     </application>
 
 </manifest>
