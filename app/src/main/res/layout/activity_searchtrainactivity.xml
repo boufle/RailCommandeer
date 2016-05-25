@@ -9,12 +9,102 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:elevation="4dp" />
-
-    <it.gmariotti.cardslib.library.view.CardViewNative
-            android:id="@+id/carddemo"
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            card:card_layout_resourceID="@layout/native_cardwithlist_layout"
-            style="@style/card_external"
-    />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_marginBottom="100dp">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
+            <EditText
+                    android:layout_width="334dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText" android:text="Départ"
+                    android:gravity="center_vertical" android:foregroundGravity="center_vertical"/>
+            <EditText
+                    android:layout_width="334dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText2" android:text="Arrivée" android:gravity="center_vertical"/>
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Départ le                                     Arrivée le"
+                    android:id="@+id/textView"/>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+                <EditText
+                        android:layout_width="185dp"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:id="@+id/date" android:onClick="onClickDepartDate" android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dateArrive"
+                        android:editable="false"
+                        android:layout_alignParentRight="true" android:onClick="onClickArriveDate" android:layout_alignParentEnd="true"
+                        android:layout_toRightOf="@+id/date" android:layout_toEndOf="@+id/date"/>
+            </RelativeLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/white" />
+
+            <Switch
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choisir un trajet retour   "
+                    android:id="@+id/switch1" android:layout_gravity="right" android:checked="false"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/trajetRetour"
+                    android:visibility="gone"
+                    android:layout_height="60dp">
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10px"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Départ le                                     Arrivée le"
+                        android:id="@+id/textView2"/>
+                <EditText
+                        android:layout_width="185dp"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:id="@+id/date2" android:onClick="onClickDepartDate2" android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dateArrive2"
+                        android:editable="false"
+                        android:layout_alignParentRight="true" android:onClick="onClickArriveDate2" android:layout_alignParentEnd="true"
+                        android:layout_toRightOf="@+id/date2" android:layout_toEndOf="@+id/date2"/>
+            </RelativeLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="1dp"
+                    android:background="@android:color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
 </RelativeLayout>
