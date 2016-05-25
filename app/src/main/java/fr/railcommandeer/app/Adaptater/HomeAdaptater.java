@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 import fr.railcommandeer.app.MainActivity;
 import fr.railcommandeer.app.R;
 
@@ -60,13 +61,15 @@ public class HomeAdaptater  extends BaseAdapter {
             }
         });
         if(position   == 0){
-            txt.setImageResource(R.drawable.trainsearch);
+            Picasso.with(context).load((R.drawable.trainsearch)).into(txt);
 
         }else if(position   == 1){
-            txt.setImageResource(R.drawable.trainrecherche);
+         //  txt.setImageResource(R.drawable.trainrecherche);
+            Picasso.with(context).load((R.drawable.trainrecherche)).into(txt);
 
         }else {
-            txt.setImageResource(R.drawable.tranplan);
+           // txt.setImageResource(R.drawable.tranplan);
+            Picasso.with(context).load((R.drawable.tranplan)).into(txt);
 
         }
 
