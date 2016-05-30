@@ -1,43 +1,16 @@
 package fr.railcommandeer.app;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
 import android.support.annotation.Nullable;
-import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.*;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
-import com.mikepenz.google_material_typeface_library.GoogleMaterial;
-import com.mikepenz.materialdrawer.*;
-import com.mikepenz.materialdrawer.holder.BadgeStyle;
-import com.mikepenz.materialdrawer.interfaces.ICrossfader;
-import com.mikepenz.materialdrawer.model.*;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.mikepenz.materialdrawer.model.interfaces.Nameable;
-import com.mikepenz.materialdrawer.util.DrawerUIUtils;
-import com.mikepenz.crossfadedrawerlayout.view.CrossfadeDrawerLayout;
-import com.mikepenz.materialize.util.UIUtils;
-import fr.railcommandeer.app.Adaptater.DealAdaptater;
 import fr.railcommandeer.app.Adaptater.HomeAdaptater;
 import fr.railcommandeer.app.Materials.DealItent;
+import fr.railcommandeer.app.Materials.SearchTrainActivity;
 import fr.railcommandeer.app.Navigation.LoginDialog;
 import fr.railcommandeer.app.Navigation.NavigationDrawer;
-
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 
 public class MainActivity extends AppCompatActivity {
 

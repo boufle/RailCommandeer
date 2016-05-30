@@ -1,4 +1,4 @@
-package fr.railcommandeer.app;
+package fr.railcommandeer.app.Materials;
 
 import android.app.DatePickerDialog;
 import android.graphics.Color;
@@ -6,17 +6,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
-import android.support.v7.widget.Toolbar;
 import android.view.*;
 
 import android.widget.*;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialize.util.UIUtils;
-import fr.railcommandeer.app.Materials.SearchCard;
-import it.gmariotti.cardslib.library.internal.Card;
+import fr.railcommandeer.app.R;
 import it.gmariotti.cardslib.library.internal.CardHeader;
-import it.gmariotti.cardslib.library.view.CardViewNative;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -183,34 +180,5 @@ public class SearchTrainActivity extends AppCompatActivity {
         ArriveDatePickerDialog2.show();
     }
 
-    class ActionBarCallBack implements ActionMode.Callback {
 
-        @Override
-        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            return false;
-        }
-
-        @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(UIUtils.getThemeColorFromAttrOrRes(SearchTrainActivity.this, R.attr.colorPrimaryDark, R.color.material_drawer_primary_dark));
-            }
-
-            mode.getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
-        }
-
-        @Override
-        public void onDestroyActionMode(ActionMode mode) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().setStatusBarColor(Color.TRANSPARENT);
-            }
-        }
-
-        @Override
-        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return false;
-        }
-
-    }
 }
