@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:card="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+
                 android:layout_height="match_parent">
 
 
@@ -14,15 +15,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
-            <EditText
+            <AutoCompleteTextView
                     android:layout_width="334dp"
+                    android:inputType="text"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText" android:text="Départ"
+                    android:id="@+id/editText" android:hint="Départ"
                     android:gravity="center_vertical" android:foregroundGravity="center_vertical"/>
-            <EditText
+            <AutoCompleteTextView
                     android:layout_width="334dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText2" android:text="Arrivée" android:gravity="center_vertical"/>
+                    android:inputType="text"
+                    android:id="@+id/editText2" android:hint="Arrivée" android:gravity="center_vertical"/>
             <Space
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,7 +102,20 @@
                     android:layout_marginTop="10dp"
                     android:layout_height="1dp"
                     android:background="@android:color/white" />
+
+
+            <com.dd.CircularProgressButton
+                    android:id='@+id/btn_login'
+                    android:layout_width="196dp"
+                    android:layout_height='wrap_content'
+                    android:layout_marginTop="16dp"
+                    android:textColor="#FFFFFF" android:onClick="OnClicksearch"
+                    android:textSize="13sp"
+                    app:cpb_textComplete="Yeah"
+                    app:cpb_textError="Erreur"
+                    app:cpb_textIdle="Rechercher" android:layout_marginRight="3dp"/>
         </LinearLayout>
     </RelativeLayout>
+
 
 </RelativeLayout>

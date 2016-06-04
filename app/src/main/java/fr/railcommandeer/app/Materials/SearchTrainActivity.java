@@ -1,6 +1,7 @@
 package fr.railcommandeer.app.Materials;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,12 +10,18 @@ import android.support.v7.view.ActionMode;
 import android.view.*;
 
 import android.widget.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.mashape.unirest.http.ObjectMapper;
+import com.mashape.unirest.http.Unirest;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialize.util.UIUtils;
+import fr.railcommandeer.app.Adaptater.AutoCmopleteAdaptater;
 import fr.railcommandeer.app.R;
+import fr.railcommandeer.app.ResultatActivity;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -30,6 +37,8 @@ public class SearchTrainActivity extends AppCompatActivity {
     private DatePickerDialog DepartDatePickerDialog2;
     private DatePickerDialog ArriveDatePickerDialog2;
     private SimpleDateFormat dateFormatter;
+    AutoCompleteTextView depart;
+    AutoCompleteTextView arrive;
     EditText editText;
     EditText dateArriver;
     EditText editText2;
@@ -48,12 +57,38 @@ public class SearchTrainActivity extends AppCompatActivity {
         CardHeader header = new CardHeader(getApplicationContext());
         searchCard.addCardHeader(header);
 
+
+        depart = (AutoCompleteTextView) findViewById(R.id.editText);
+        arrive = (AutoCompleteTextView) findViewById(R.id.editText2);
         editText = (EditText) findViewById(R.id.date);
         aSwitch = (Switch) findViewById(R.id.switch1);
         relativeLayout = (RelativeLayout) findViewById(R.id.trajetRetour);
         dateArriver = (EditText) findViewById(R.id.dateArrive);
         editText2 = (EditText) findViewById(R.id.date2);
         dateArriver2 = (EditText) findViewById(R.id.dateArrive2);
+
+        Unirest.setObjectMapper(new ObjectMapper() {
+            private com.fasterxml.jackson.databind.ObjectMapper jacksonObjectMapper
+                    = new com.fasterxml.jackson.databind.ObjectMapper();
+
+            public <T> T readValue(String value, Class<T> valueType) {
+                try {
+                    return jacksonObjectMapper.readValue(value, valueType);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            public String writeValue(Object value) {
+                try {
+                    return jacksonObjectMapper.writeValueAsString(value);
+                } catch (JsonProcessingException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+        depart.setAdapter(new AutoCmopleteAdaptater(this, android.R.layout.simple_dropdown_item_1line));
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         //CardViewNative cardView = (CardViewNative) findViewById(R.id.carddemo);
@@ -86,9 +121,9 @@ public class SearchTrainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         //add the values which need to be saved from the drawer to the bundle
-        outState = result.saveInstanceState(outState);
+//        outState = result.saveInstanceState(outState);
         //add the values which need to be saved from the accountHeader to the bundle
-        outState = headerResult.saveInstanceState(outState);
+  //      outState = headerResult.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
 
@@ -181,4 +216,19 @@ public class SearchTrainActivity extends AppCompatActivity {
     }
 
 
+    public void OnClicksearch(View view) {
+
+        if(editText.getText().equals("")){
+
+        }
+        else if(editText2.getText().equals("")){
+
+        }
+        else{
+
+        }
+        Intent intent = null;
+        intent = new Intent(SearchTrainActivity.this, ResultatActivity.class);
+        SearchTrainActivity.this.startActivity(intent);
+    }
 }

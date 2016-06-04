@@ -36,7 +36,7 @@ import fr.railcommandeer.app.Utils.Gravatar;
  * fr.railcommandeer.app.Navigation
  * Created by Theo on 25/05/2016 for RailCommandeer.
  */
-public class NavigationDrawer {
+public class DrawerConnected {
     private   Drawer result;
     private   AccountHeader headerResult;
     private  CrossfadeDrawerLayout crossfadeDrawerLayout;
@@ -49,7 +49,7 @@ public class NavigationDrawer {
         return headerResult;
     }
 
-    public NavigationDrawer(final MainActivity mainActivity, Toolbar toolbar, Bundle savedInstanceState) {
+    public DrawerConnected(final MainActivity mainActivity, Toolbar toolbar, Bundle savedInstanceState) {
         //initialize and create the image loader logic
         DrawerImageLoader.init(new AbstractDrawerImageLoader() {
             @Override
@@ -64,22 +64,22 @@ public class NavigationDrawer {
 
         });
         // Create a few sample profile
-          // NOTE you have to define the loader logic too. See the CustomApplication for more details
-          IProfile profile = new ProfileDrawerItem().withName("Invité").withIcon(GoogleMaterial.Icon.gmd_account_circle);
+        // NOTE you have to define the loader logic too. See the CustomApplication for more details
+        IProfile profile = new ProfileDrawerItem().withName("Benjamin Penot").withEmail("bouflelol@gmail.com").withIcon(Gravatar.gravatarUrl("theobeaudenon@yahoo.fr"));
 
         // Create the AccountHeader
-          headerResult = new AccountHeaderBuilder()
+        headerResult = new AccountHeaderBuilder()
                 .withActivity(mainActivity)
                 .withHeaderBackground(R.drawable.header)
                 .addProfiles(
                         profile
                 ).withSelectionListEnabledForSingleProfile(false)
 
-                  .withSavedInstance(savedInstanceState)
+                .withSavedInstance(savedInstanceState)
                 .build();
 
         //Create the drawer
-            result = new DrawerBuilder()
+        result = new DrawerBuilder()
                 .withActivity(mainActivity)
                 .withToolbar(toolbar)
                 .withHasStableIds(true)
@@ -90,8 +90,8 @@ public class NavigationDrawer {
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName("Accueil").withIcon(GoogleMaterial.Icon.gmd_home).withIdentifier(1),
                         new PrimaryDrawerItem().withName("Recherche").withIcon(GoogleMaterial.Icon.gmd_directions_transit).withIdentifier(2),
-                        new PrimaryDrawerItem().withName("Connexion").withIcon(GoogleMaterial.Icon.gmd_account_circle).withIdentifier(3).withSelectable(false),
-                         new PrimaryDrawerItem().withDescription("Consulter vos reservations").withName("Mes commandes").withIcon(GoogleMaterial.Icon.gmd_card_travel).withIdentifier(4),
+                        new PrimaryDrawerItem().withName("Mon Compte").withIcon(GoogleMaterial.Icon.gmd_account_circle).withIdentifier(3).withSelectable(false),
+                        new PrimaryDrawerItem().withDescription("Consulter vos reservations").withName("Mes commandes").withIcon(GoogleMaterial.Icon.gmd_card_travel).withIdentifier(4),
                         new SectionDrawerItem().withName("Autre"),
                         new SecondaryDrawerItem().withName("A propos").withIcon(GoogleMaterial.Icon.gmd_help_outline).withIdentifier(5)
                 ) // add the items we want to use with our Drawer
@@ -100,7 +100,7 @@ public class NavigationDrawer {
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem instanceof Nameable) {
 
-                            if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Connexion")){
+                            if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Mon Compte")){
                                 mainActivity.GetClicked(10);
                             }else  if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Recherche")){
                                 mainActivity.GetClicked(0);

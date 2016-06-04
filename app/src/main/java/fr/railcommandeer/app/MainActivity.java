@@ -9,12 +9,15 @@ import android.support.v7.widget.Toolbar;
 import fr.railcommandeer.app.Adaptater.HomeAdaptater;
 import fr.railcommandeer.app.Materials.DealItent;
 import fr.railcommandeer.app.Materials.SearchTrainActivity;
+import fr.railcommandeer.app.Navigation.DrawerConnected;
 import fr.railcommandeer.app.Navigation.LoginDialog;
 import fr.railcommandeer.app.Navigation.NavigationDrawer;
 
 public class MainActivity extends AppCompatActivity {
 
       private NavigationDrawer nav;
+      private DrawerConnected navConnected;
+      public static boolean isConnected = false;
 
 
     @Override
@@ -37,7 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.drawer_item_crossfade_drawer_layout_drawer);
-          nav = new NavigationDrawer(this,toolbar,savedInstanceState);
+        if (isConnected){
+            navConnected = new DrawerConnected(this,toolbar,savedInstanceState);
+        }
+        else{
+            nav = new NavigationDrawer(this,toolbar,savedInstanceState);
+        }
 
 
     }
@@ -85,20 +93,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         //add the values which need to be saved from the drawer to the bundle
-        outState = nav.getResult().saveInstanceState(outState);
-        //add the values which need to be saved from the accountHeader to the bundle
-        outState = nav.getHeaderResult().saveInstanceState(outState);
+
+        if (isConnected){
+            outState = navConnected.getResult().saveInstanceState(outState);
+            //add the values which need to be saved from the accountHeader to the bundle
+            outState = navConnected.getHeaderResult().saveInstanceState(outState);
+        }
+        else {
+            outState = nav.getResult().saveInstanceState(outState);
+            //add the values which need to be saved from the accountHeader to the bundle
+            outState = nav.getHeaderResult().saveInstanceState(outState);
+        }
+
         super.onSaveInstanceState(outState);
     }
 
     @Override
     public void onBackPressed() {
         //handle the back press :D close the drawer first and if the drawer is closed close the activity
-        if (nav.getResult() != null && nav.getResult().isDrawerOpen()) {
-            nav.getResult().closeDrawer();
-        } else {
-            super.onBackPressed();
+
+        if (isConnected){
+            if (navConnected.getResult() != null && navConnected.getResult().isDrawerOpen()) {
+                navConnected.getResult().closeDrawer();
+            } else {
+                super.onBackPressed();
+            }
         }
+        else {
+            if (nav.getResult() != null && nav.getResult().isDrawerOpen()) {
+                nav.getResult().closeDrawer();
+            } else {
+                super.onBackPressed();
+            }
+        }
+
     }
 
 
