@@ -35,11 +35,11 @@ public class SearchTrainActivity extends AppCompatActivity {
     AutoCompleteTextView depart;
     AutoCompleteTextView arrive;
     EditText editText;
-    EditText dateArriver;
+    Spinner dateArriver;
     EditText editText2;
-    EditText dateArriver2;
+    Spinner dateArriver2;
     Switch aSwitch;
-    RelativeLayout relativeLayout;
+    LinearLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +57,43 @@ public class SearchTrainActivity extends AppCompatActivity {
         arrive = (AutoCompleteTextView) findViewById(R.id.editText2);
         editText = (EditText) findViewById(R.id.date);
         aSwitch = (Switch) findViewById(R.id.switch1);
-        relativeLayout = (RelativeLayout) findViewById(R.id.trajetRetour);
-        dateArriver = (EditText) findViewById(R.id.dateArrive);
+        relativeLayout = (LinearLayout) findViewById(R.id.trajetRetour);
+        dateArriver = (Spinner) findViewById(R.id.dateArrive);
         editText2 = (EditText) findViewById(R.id.date2);
-        dateArriver2 = (EditText) findViewById(R.id.dateArrive2);
+        dateArriver2 = (Spinner) findViewById(R.id.dateArrive2);
 
+        String[] items = new String[] { "0h", "1h", "2h" , "3h" , "4h" , "5h" , "6h" , "7h" , "8h" , "9h" ,
+                "10h" , "11h" , "12h" , "13h" , "14h" , "15h" , "16h", "17h", "18h", "19h", "20h", "21h", "22h", "23h" };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, items);
+
+        dateArriver2.setAdapter(adapter);
+        dateArriver.setAdapter(adapter);
+
+
+
+
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus) {
+                    onClickDepartDate(v);
+                } else {
+                    // Hide your calender here
+                }
+            }
+        });
+        editText2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus) {
+                    onClickDepartDate(v);
+                } else {
+                    // Hide your calender here
+                }
+            }
+        });
 /*
         Unirest.setObjectMapper(new ObjectMapper() {
             private com.fasterxml.jackson.databind.ObjectMapper jacksonObjectMapper
@@ -140,15 +172,6 @@ public class SearchTrainActivity extends AppCompatActivity {
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
 
-        ArriveDatePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                Calendar newDate = Calendar.getInstance();
-                newDate.set(year, monthOfYear, dayOfMonth);
-                dateArriver.setText(dateFormatter.format(newDate.getTime()));
-            }
-
-        },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
         DepartDatePickerDialog2 = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
 
@@ -161,15 +184,7 @@ public class SearchTrainActivity extends AppCompatActivity {
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
 
-        ArriveDatePickerDialog2 = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
 
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                Calendar newDate = Calendar.getInstance();
-                newDate.set(year, monthOfYear, dayOfMonth);
-                dateArriver2.setText(dateFormatter.format(newDate.getTime()));
-            }
-
-        },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
     }
 
 
@@ -196,21 +211,17 @@ public class SearchTrainActivity extends AppCompatActivity {
         }
     }
 
+
     public void onClickDepartDate(View view) {
         DepartDatePickerDialog.show();
     }
 
-    public void onClickArriveDate(View view) {
-        ArriveDatePickerDialog.show();
-    }
 
     public void onClickDepartDate2(View view) {
         DepartDatePickerDialog2.show();
     }
 
-    public void onClickArriveDate2(View view) {
-        ArriveDatePickerDialog2.show();
-    }
+
 
 
     public void OnClicksearch(View view) {

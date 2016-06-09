@@ -15,47 +15,80 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
-            <AutoCompleteTextView
-                    android:layout_width="334dp"
-                    android:inputType="text"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText" android:hint="Départ"
-                    android:gravity="center_vertical" android:foregroundGravity="center_vertical"/>
-            <AutoCompleteTextView
-                    android:layout_width="334dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:id="@+id/editText2" android:hint="Arrivée" android:gravity="center_vertical"/>
-            <Space
+            <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_height="wrap_content">
+                <ImageView
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:id="@+id/imageView" android:src="@drawable/pin" android:layout_gravity="center"/>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <AutoCompleteTextView
+                            android:layout_width="match_parent"
+                            android:inputType="text"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/editText" android:hint="Gare de Départ"
+                            android:gravity="center_vertical" android:foregroundGravity="center_vertical"/>
+                    <AutoCompleteTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:id="@+id/editText2" android:hint="Gare d&apos;Arrivée" android:gravity="center_vertical"/>
+                </LinearLayout>
+            </LinearLayout>
 
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Départ le                                     Arrivée le"
-                    android:id="@+id/textView"/>
-            <RelativeLayout
+            <Space android:layout_width="20px" android:layout_height="20px"/>
+            <Space android:layout_width="20px" android:layout_height="20px"/>
+            <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
-                <EditText
-                        android:layout_width="185dp"
-                        android:layout_height="wrap_content"
-                        android:editable="false"
-                        android:id="@+id/date" android:onClick="onClickDepartDate" android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
-                <EditText
+                    android:layout_height="wrap_content">
+                <Space android:layout_width="20px" android:layout_height="20px"/>
+                <ImageView android:layout_width="48dp" android:layout_height="match_parent" android:id="@+id/imageView2"
+                           android:src="@drawable/calendar" android:layout_gravity="center"/>
+                <Space android:layout_width="20px" android:layout_height="20px"/>
+                <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/dateArrive"
-                        android:editable="false"
-                        android:layout_alignParentRight="true" android:onClick="onClickArriveDate" android:layout_alignParentEnd="true"
-                        android:layout_toRightOf="@+id/date" android:layout_toEndOf="@+id/date"/>
-            </RelativeLayout>
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Jour de Départ"
+                            android:id="@+id/textView" android:singleLine="true"/>
+                    <EditText
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:editable="false" android:onClick="onClickDepartDate"
+                            android:id="@+id/date"   android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textAppearance="?android:attr/textAppearanceSmall" android:text="Heure de Départ"
+                              android:id="@+id/textView3" android:singleLine="true"/>
+                    <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dateArrive"
+                            android:layout_alignParentRight="true"   android:layout_alignParentEnd="true"
+                            android:layout_toRightOf="@+id/date" android:layout_toEndOf="@+id/date"/>
+                </LinearLayout>
+            </LinearLayout>
 
+            <Space
+                    android:layout_width="20px"
+                    android:layout_height="20px"
+            />
             <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -68,34 +101,47 @@
                     android:text="Choisir un trajet retour   "
                     android:id="@+id/switch1" android:layout_gravity="right" android:checked="false"/>
 
-            <RelativeLayout
+            <LinearLayout
                     android:layout_width="match_parent"
                     android:id="@+id/trajetRetour"
                     android:visibility="gone"
                     android:layout_height="60dp">
 
 
-                <TextView
+                <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10px"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Départ le                                     Arrivée le"
-                        android:id="@+id/textView2"/>
-                <EditText
-                        android:layout_width="185dp"
-                        android:layout_height="wrap_content"
-                        android:editable="false"
-                        android:id="@+id/date2" android:onClick="onClickDepartDate2" android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
-                <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/dateArrive2"
-                        android:editable="false"
-                        android:layout_alignParentRight="true" android:onClick="onClickArriveDate2" android:layout_alignParentEnd="true"
-                        android:layout_toRightOf="@+id/date2" android:layout_toEndOf="@+id/date2"/>
-            </RelativeLayout>
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10px"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Jour de Départ"
+                            android:id="@+id/textView2"/>
+                    <EditText
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:editable="false"  android:onClick="onClickDepartDate2"
+                            android:id="@+id/date2"   android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_marginBottom="10px" android:textAppearance="?android:attr/textAppearanceSmall"
+                              android:text="Heure de Départ"
+                              android:id="@+id/textView4"/>
+                    <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dateArrive2"
+                            android:layout_alignParentRight="true"   android:layout_alignParentEnd="true"
+                            android:layout_toRightOf="@+id/date2" android:layout_toEndOf="@+id/date2"/>
+                </LinearLayout>
+            </LinearLayout>
 
             <View
                     android:layout_width="match_parent"
