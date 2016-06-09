@@ -10,18 +10,13 @@ import android.support.v7.view.ActionMode;
 import android.view.*;
 
 import android.widget.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.mashape.unirest.http.ObjectMapper;
-import com.mashape.unirest.http.Unirest;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.Drawer;
-import com.mikepenz.materialize.util.UIUtils;
 import fr.railcommandeer.app.Adaptater.AutoCmopleteAdaptater;
 import fr.railcommandeer.app.R;
 import fr.railcommandeer.app.ResultatActivity;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;

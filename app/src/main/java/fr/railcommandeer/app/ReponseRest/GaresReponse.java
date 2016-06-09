@@ -1,7 +1,6 @@
 package fr.railcommandeer.app.ReponseRest;
 
-
-
+import com.google.gson.Gson;
 import fr.railcommandeer.app.entity.Gare;
 
 import java.io.Serializable;
@@ -40,6 +39,9 @@ public class GaresReponse implements Serializable {
         this.success = success;
     }
 
-
+    public String toJson(){
+        Gson gson = new Gson();
+        return  gson.toJson(this);
+    }
 
 }

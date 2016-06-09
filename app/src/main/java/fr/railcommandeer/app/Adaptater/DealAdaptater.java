@@ -11,6 +11,9 @@ import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.squareup.picasso.Picasso;
 import fr.railcommandeer.app.MainActivity;
 import fr.railcommandeer.app.R;
+import fr.railcommandeer.app.entity.Deal;
+
+import java.util.List;
 
 /**
  * fr.railcommandeer.app.Adaptater
@@ -20,17 +23,19 @@ public class DealAdaptater extends BaseAdapter {
 
     private   LayoutInflater layoutInflater;
     private Application context;
+    private List<Deal> deals;
 
-    public DealAdaptater(Application context) {
+    public DealAdaptater(Application context, List<Deal> deals) {
 
         this.context = context;
+        this.deals = deals;
         layoutInflater = LayoutInflater.from(context);
     }
 
 
     @Override
     public int getCount() {
-        return 8;
+        return deals.size();
     }
 
     @Override
@@ -58,38 +63,8 @@ public class DealAdaptater extends BaseAdapter {
             }
         });
         Picasso px = Picasso.with(context);
-        //px.setIndicatorsEnabled(true);
-        if(position   == 0){
-            px.load("https://www.raileurope.ca/cms-images/810/496/eurostar-train-lg-index,1.jpg").into(txt);
-
-        }else if(position   == 1){
-            //  txt.setImageResource(R.drawable.trainrecherche);
-            px.load("http://www.indianrailwaynews.com/wp-content/uploads/2016/03/Train-1.jpg").into(txt);
-
-        }else if(position   == 2){
-            //  txt.setImageResource(R.drawable.trainrecherche);
-            px.load("http://static.dnaindia.com/sites/default/files/styles/half/public/2016/03/20/439541-railways.jpg").into(txt);
-
-        }else if(position   == 3){
-            //  txt.setImageResource(R.drawable.trainrecherche);
-            px.load("https://www.crosscountrytrains.co.uk/media/23127/hst2012.jpg").into(txt);
-
-        }else if(position   == 4){
-            //  txt.setImageResource(R.drawable.trainrecherche);
-            px.load("http://referentiel.nouvelobs.com/file/6480450-saone-et-loire-une-rixe-dans-un-train-fait-1-blesse-grave.jpg").into(txt);
-
-        }else if(position   == 5){
-            //  txt.setImageResource(R.drawable.trainrecherche);
-            px.load("http://ichef-1.bbci.co.uk/news/660/cpsprodpb/17FAC/production/_88502289_968.jpg").into(txt);
-
-        }else if(position   == 6){
-            //  txt.setImageResource(R.drawable.trainrecherche);
-            px.load("http://www.tourisme-gravelines.fr/files/9514/3401/9062/train_touristique2.jpg").into(txt);
-
-         }else if(position   == 7){
-           // txt.setImageResource(R.drawable.tranplan);
-            px.load("https://www.raileurope.ca/cms-images/6/234/tgv-train-lg-index,1.jpg").into(txt);
-        }
+        px.load(deals.get(position).getImage()).into(txt);
+        texteon.setText(deals.get(position).getTexte());
 
 
 

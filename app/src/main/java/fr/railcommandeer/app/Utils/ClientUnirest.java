@@ -1,15 +1,6 @@
 package fr.railcommandeer.app.Utils;
 
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
-import com.mashape.unirest.request.GetRequest;
-import com.mashape.unirest.request.body.Body;
-import fr.railcommandeer.app.MainActivity;
-import fr.railcommandeer.app.ReponseRest.GaresReponse;
 import fr.railcommandeer.app.entity.Gare;
 import fr.railcommandeer.app.entity.Utilisateurs;
 

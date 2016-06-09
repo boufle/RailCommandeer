@@ -1,6 +1,6 @@
 package fr.railcommandeer.app.ReponseRest;
 
-
+import com.google.gson.Gson;
 import fr.railcommandeer.app.entity.Utilisateurs;
 
 import java.io.Serializable;
@@ -37,6 +37,9 @@ public class UserReponse implements Serializable {
         this.success = success;
     }
 
-
+    public String toJson(){
+        Gson gson = new Gson();
+        return  gson.toJson(this);
+    }
 
 }

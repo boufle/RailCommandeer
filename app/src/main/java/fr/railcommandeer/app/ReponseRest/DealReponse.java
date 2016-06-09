@@ -1,6 +1,6 @@
 package fr.railcommandeer.app.ReponseRest;
 
-
+import com.google.gson.Gson;
 import fr.railcommandeer.app.entity.Deal;
 
 import java.io.Serializable;
@@ -22,11 +22,11 @@ public class DealReponse implements Serializable {
 
     }
 
-    public List<Deal> getGares() {
+    public List<Deal> getDealList() {
         return dealList;
     }
 
-    public void setGares(List<Deal> gares) {
+    public void setDealList(List<Deal> gares) {
         this.dealList = gares;
     }
 
@@ -38,6 +38,9 @@ public class DealReponse implements Serializable {
         this.success = success;
     }
 
-
+    public String toJson(){
+        Gson gson = new Gson();
+        return  gson.toJson(this);
+    }
 
 }

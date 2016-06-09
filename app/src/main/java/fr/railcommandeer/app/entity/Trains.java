@@ -13,11 +13,11 @@ public class Trains {
 
     private double surplus;
 
-    private Date heure_depart;
+    private Date Date_depart;
 
     private int nbr_place;
 
-    private List<Trains> train;
+    private Ligne ligne;
 
     public int getId() {
         return id;
@@ -35,12 +35,12 @@ public class Trains {
         this.surplus = surplus;
     }
 
-    public Date getHeure_depart() {
-        return heure_depart;
+    public Date getDate_depart() {
+        return Date_depart;
     }
 
-    public void setHeure_depart(Date heure_depart) {
-        this.heure_depart = heure_depart;
+    public void setDate_depart(Date date_depart) {
+        Date_depart = date_depart;
     }
 
     public int getNbr_place() {
@@ -51,11 +51,12 @@ public class Trains {
         this.nbr_place = nbr_place;
     }
 
-    public List<Trains> getTrain() {
-        return train;
+    public Ligne getLigne() {
+        return ligne;
     }
 
-    public void setTrain(List<Trains> train) {
-        this.train = train;
+    public void setLigne(Ligne ligne) {
+        this.ligne = ligne;
     }
-}
+
+ }
