@@ -55,7 +55,7 @@ public class ResultatAdaptater extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         convertView= layoutInflater.inflate(R.layout.research_card, null);
 
-        //Button add =(Button) convertView.findViewById(R.id.add_btn);
+        Button add =(Button) convertView.findViewById(R.id.add_btn);
         TextView heureD =(TextView) convertView.findViewById(R.id.heureDeDepart);
         TextView heureA =(TextView) convertView.findViewById(R.id.heureDarrivee);
         TextView duree =(TextView) convertView.findViewById(R.id.duree);
@@ -67,14 +67,14 @@ public class ResultatAdaptater extends BaseAdapter {
         }
 
 
-      /*  add.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 // context.GetClicked(position);
             }
-        });*/
+        });
 
         return convertView;
     }

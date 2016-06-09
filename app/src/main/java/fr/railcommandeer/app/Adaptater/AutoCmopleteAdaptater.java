@@ -83,7 +83,7 @@ public class AutoCmopleteAdaptater extends ArrayAdapter<String> implements Filte
 
             try {
 
-                ArrayList<Gare> shippers = clientUnirest.downloadGare();
+                ArrayList<Gare> shippers = clientUnirest.downloadGare(constraint[0]);
 
                 for(Gare ship: shippers){
                     gareNames.add(ship.getNom_gare());

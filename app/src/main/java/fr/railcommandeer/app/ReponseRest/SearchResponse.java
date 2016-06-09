@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by Théo on 08/06/2016.
  */
-public class SearchResponse implements Serializable {
+public class SearchResponse implements Serializable{
     VoyageReponse allee = null;
     VoyageReponse retour = null;
 

@@ -1,7 +1,9 @@
 package fr.railcommandeer.app.Navigation;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -46,7 +48,7 @@ public class LoginDialog extends AppCompatActivity {
     public void login(View view) {
         final EditText pass = (EditText) findViewById(R.id.password);
         final EditText user = (EditText) findViewById(R.id.txt_name);
-        CircularProgressButton btn = (CircularProgressButton) findViewById(R.id.btn_login);
+        final CircularProgressButton btn = (CircularProgressButton) findViewById(R.id.btn_login);
         btn.setIndeterminateProgressMode(true);
         btn.setProgress(1);
 
@@ -63,6 +65,24 @@ public class LoginDialog extends AppCompatActivity {
                     if (intent != null) {
                         LoginDialog.this.startActivity(intent);
                     }
+                }
+                else{
+                    LoginDialog.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            AlertDialog alertDialog = new AlertDialog.Builder(LoginDialog.this).create();
+                            alertDialog.setTitle("Erreur");
+                            alertDialog.setMessage("L'utilisateur existe deja");
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                            btn.setProgress(0);
+                                        }
+                                    });
+                            alertDialog.show();
+                        }
+                    });
                 }
 
             }

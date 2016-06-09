@@ -1,6 +1,9 @@
 package fr.railcommandeer.app.Utils;
 
 
+import com.google.gson.Gson;
+import fr.railcommandeer.app.ReponseRest.DealReponse;
+import fr.railcommandeer.app.ReponseRest.GaresReponse;
 import fr.railcommandeer.app.entity.Gare;
 import fr.railcommandeer.app.entity.Utilisateurs;
 
@@ -28,51 +31,62 @@ public class ClientUnirest {
 
     }
 
-    public ArrayList<Gare> downloadGare(){
+    public ArrayList<Gare> downloadGare(String search){
 
+        ArrayList<Gare> gares = new ArrayList<>();
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = RequestBody.create(JSON, "");
+        Request request = new Request.Builder()
+                .url("http://10.29.18.39:8080/rest/garerest/searchGare")
+                .post(body)
+                .addHeader("search", search)
+                .addHeader("cache-control", "no-cache")
+                .addHeader("postman-token", "23409817-65d6-acdc-8876-2b05e756be6c")
+                .build();
 
         try {
-          response =   getHTML("http://pastebin.com/raw/Z5UcFdZy");
-        } catch (Exception e) {
+            Response response = client.newCall(request).execute();
+
+            Gson gson = new Gson();
+            GaresReponse gare =  gson.fromJson(response.body().string(), GaresReponse.class);
+            for (Gare g : gare.getGares()) {
+                gares.add(g);
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
-        try {
-             jsonObj = new JSONObject(response);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            System.out.println(jsonObj.getJSONObject("gares"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        System.out.println(response);
-        try {
-            String test = jsonObj.getJSONObject("gares").getString("nom_gare");
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        System.out.println(out.size());
-
-
-        return new ArrayList<Gare>();
+        return gares;
     }
 
     public boolean isConnectionCheck(String username, String password){
 
         String test = null;
         Utilisateurs utilisateurs = new Utilisateurs();
+        RequestBody body = RequestBody.create(JSON, "");
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("http://10.29.18.39:8080/rest/userrest/loginUser")
+                .post(body)
+                .addHeader("email", username)
+                .addHeader("mdp", password)
+                .addHeader("cache-control", "no-cache")
+                .addHeader("postman-token", "95a1e38c-00f9-0108-6145-5da43e561372")
+                .build();
+
         try {
-            response = getHTML("http://pastebin.com/raw/DGLYAp6U");
-            jsonObj = new JSONObject(response);
+            Response response = client.newCall(request).execute();
+            jsonObj = new JSONObject(response.body().string());
             test = jsonObj.getJSONObject("success").getString("success");
-        } catch (Exception e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
             e.printStackTrace();
         }
+
 
         if (test.equals("true")){
             try {
@@ -98,6 +112,11 @@ public class ClientUnirest {
         return false;
     }
 
+    public void getTrajets (){
+
+
+    }
+
 
     public boolean isInscriptionCheck (String nom, String prenom, String email, String mdp, String adresse){
         Utilisateurs utilisateurs = new Utilisateurs();
@@ -106,7 +125,7 @@ public class ClientUnirest {
         RequestBody body = RequestBody.create(JSON, "");
 
         Request request = new Request.Builder()
-                .url("http:10.29.18.39:8080/rest/userrest/addUser")
+                .url("http://10.29.18.39:8080/rest/userrest/addUser")
                 .post(body)
                 .addHeader("nom", nom)
                 .addHeader("prenom", prenom)
