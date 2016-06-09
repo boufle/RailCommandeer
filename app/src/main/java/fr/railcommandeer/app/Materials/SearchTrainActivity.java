@@ -67,6 +67,7 @@ public class SearchTrainActivity extends AppCompatActivity {
         editText2 = (EditText) findViewById(R.id.date2);
         dateArriver2 = (EditText) findViewById(R.id.dateArrive2);
 
+/*
         Unirest.setObjectMapper(new ObjectMapper() {
             private com.fasterxml.jackson.databind.ObjectMapper jacksonObjectMapper
                     = new com.fasterxml.jackson.databind.ObjectMapper();
@@ -87,6 +88,7 @@ public class SearchTrainActivity extends AppCompatActivity {
                 }
             }
         });
+*/
 
         depart.setAdapter(new AutoCmopleteAdaptater(this, android.R.layout.simple_dropdown_item_1line));
 
@@ -229,6 +231,7 @@ public class SearchTrainActivity extends AppCompatActivity {
         }
         Intent intent = null;
         intent = new Intent(SearchTrainActivity.this, ResultatActivity.class);
+        intent.putExtra("trajet", depart.getText() + " - "+ arrive.getText() );
         SearchTrainActivity.this.startActivity(intent);
     }
 }

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FrameLayout xmlns:android='http://schemas.android.com/apk/res/android'
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width='fill_parent'
+             android:layout_height='fill_parent'
+>
+    <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/image"
+            android:layout_width="fill_parent"  android:layout_height="fill_parent"
+            android:src="@drawable/loginback" android:scaleType="centerCrop" />
+
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:gravity="center|center_horizontal" android:alpha="1"
+            android:background="@color/BlackGrey" android:layout_gravity="center">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    android:elevation="4dp" />
+            <EditText
+                    xmlns:app="http://schemas.android.com/apk/res-auto"    android:id='@+id/nom'
+                     android:layout_width='fill_parent'
+                    android:layout_height='wrap_content'
+                    android:hint="Nom"
+                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/White"
+                    android:textColorHint="@color/White" android:textColorLink="@color/BlackGrey"
+                    android:textColorHighlight="@color/BlackGrey"
+                      >
+
+
+                <requestFocus />
+            </EditText>
+            <EditText
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id='@+id/prenom'
+
+                    android:layout_width='fill_parent'
+                    android:layout_height='wrap_content' android:hint='Prenom'
+                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/White"
+                    android:textColorHint="@color/White" android:textColorLink="@color/BlackGrey"
+                    android:textColorHighlight="@color/BlackGrey"
+                   >
+
+
+            </EditText>
+
+            <EditText
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id='@+id/email'
+
+                    android:layout_width='fill_parent'
+                    android:layout_height='wrap_content' android:hint='E-mail'
+                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/White"
+                    android:textColorHint="@color/White" android:textColorLink="@color/BlackGrey"
+                    android:textColorHighlight="@color/BlackGrey"
+            >
+
+
+            </EditText>
+
+            <EditText
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id='@+id/mdp'
+
+                    android:layout_width='fill_parent'
+                    android:layout_height='wrap_content' android:hint='Mot De Passe'
+                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/White"
+                    android:textColorHint="@color/White" android:textColorLink="@color/BlackGrey"
+                    android:textColorHighlight="@color/BlackGrey"
+            >
+
+
+            </EditText>
+
+            <EditText
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id='@+id/adresse'
+
+                    android:layout_width='fill_parent'
+                    android:layout_height='wrap_content' android:hint='Adresse'
+                    android:singleLine='true' android:gravity="center_horizontal" android:textColor="@color/White"
+                    android:textColorHint="@color/White" android:textColorLink="@color/BlackGrey"
+                    android:textColorHighlight="@color/BlackGrey"
+            >
+
+
+            </EditText>
+
+
+            <LinearLayout
+                    android:layout_width='match_parent'
+                    android:layout_height='wrap_content' android:gravity="center_horizontal">
+                <com.dd.CircularProgressButton
+                        android:id='@+id/btn_login'
+                        android:layout_width="196dp"
+                        android:layout_height='wrap_content'
+                        android:layout_marginTop="16dp"
+                        android:textColor="#FFFFFF" android:onClick="login"
+                        android:textSize="13sp"
+                        app:cpb_textComplete="Yeah"
+                        app:cpb_textError="Erreur"
+                        app:cpb_textIdle="Inscription" android:layout_marginRight="3dp"/>
+
+                <com.dd.CircularProgressButton
+                        android:id='@+id/btn_cancel'
+                        android:layout_width="120dp"
+                        android:layout_height='wrap_content'
+                        android:layout_marginTop="16dp"
+                        android:textColor="#FFFFFF" android:onClick="cancel"
+                        android:textSize="13sp"
+                        app:cpb_textComplete="Yeah"
+                        app:cpb_textError="Erreur"
+                        app:cpb_textIdle="Annuler" android:layout_marginLeft="3dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

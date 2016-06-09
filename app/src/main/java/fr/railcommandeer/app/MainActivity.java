@@ -74,6 +74,13 @@ public class MainActivity extends AppCompatActivity {
             if (intent != null) {
                 MainActivity.this.startActivity(intent);
             }
+        }else if( id == 12 ){
+            Intent intent = null;
+            intent = new Intent(MainActivity.this, ConnexionActivity.class);
+
+            if (intent != null) {
+                MainActivity.this.startActivity(intent);
+            }
         }
        /* else if( id == -1 ){
             ListView yourListView = (ListView) findViewById(R.id.listView);

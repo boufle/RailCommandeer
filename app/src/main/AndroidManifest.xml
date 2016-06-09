@@ -28,6 +28,10 @@
         <activity android:name=".Navigation.LoginDialog"
                   android:theme="@style/MaterialDrawerTheme.TranslucentStatus">
         </activity>
+        <activity android:name=".ConnexionActivity"
+                  android:theme="@style/MaterialDrawerTheme.TranslucentStatus">
+        </activity>
+
         <activity android:name=".ResultatActivity"
                   android:theme="@style/MaterialDrawerTheme.ActionBar">
 

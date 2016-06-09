@@ -91,7 +91,9 @@ public class NavigationDrawer {
                         new PrimaryDrawerItem().withName("Accueil").withIcon(GoogleMaterial.Icon.gmd_home).withIdentifier(1),
                         new PrimaryDrawerItem().withName("Recherche").withIcon(GoogleMaterial.Icon.gmd_directions_transit).withIdentifier(2),
                         new PrimaryDrawerItem().withName("Connexion").withIcon(GoogleMaterial.Icon.gmd_account_circle).withIdentifier(3).withSelectable(false),
-                         new PrimaryDrawerItem().withDescription("Consulter vos reservations").withName("Mes commandes").withIcon(GoogleMaterial.Icon.gmd_card_travel).withIdentifier(4),
+                        new PrimaryDrawerItem().withName("Inscription").withIcon(GoogleMaterial.Icon.gmd_account_circle).withIdentifier(6).withSelectable(false),
+
+                        new PrimaryDrawerItem().withDescription("Consulter vos reservations").withName("Mes commandes").withIcon(GoogleMaterial.Icon.gmd_card_travel).withIdentifier(4),
                         new SectionDrawerItem().withName("Autre"),
                         new SecondaryDrawerItem().withName("A propos").withIcon(GoogleMaterial.Icon.gmd_help_outline).withIdentifier(5)
                 ) // add the items we want to use with our Drawer
@@ -110,7 +112,10 @@ public class NavigationDrawer {
                                 mainActivity.GetClicked(-1);
                             }else  if(((Nameable) drawerItem).getName().getText(mainActivity).equals("A propos")){
                                 mainActivity.GetClicked(0);
-                            }else {
+                            }else  if(((Nameable) drawerItem).getName().getText(mainActivity).equals("Inscription")){
+                                mainActivity.GetClicked(12);
+                            }
+                            else {
 
                             }
                             //Toast.makeText(mainActivity, , Toast.LENGTH_SHORT).show();

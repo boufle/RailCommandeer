@@ -9,6 +9,8 @@ import android.widget.ListView;
 import fr.railcommandeer.app.Adaptater.DealAdaptater;
 import fr.railcommandeer.app.Adaptater.ResultatAdaptater;
 
+import java.util.ArrayList;
+
 /**
  * Created by Boufle on 25/05/2016.
  */
@@ -19,11 +21,23 @@ public class ResultatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultat_train);
 
-        getSupportActionBar().setTitle("Bordeaux - Orléans");
+        Bundle b = getIntent().getExtras();
+        String trajet = b.getString("trajet");
+        getSupportActionBar().setTitle(trajet);
 
         ListView yourListView = (ListView) findViewById(R.id.listView);
 
-        ResultatAdaptater customAdapter = new ResultatAdaptater(getApplication());
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("15h30");
+        list.add("18h30");
+        ArrayList<String> list2 = new ArrayList<String>();
+        list2.add("19h20");
+        list2.add("23h40");
+        ArrayList<String> list3 = new ArrayList<String>();
+        list3.add("4h");
+        list3.add("5h10");
+
+        ResultatAdaptater customAdapter = new ResultatAdaptater(getApplication(),list,list2,list3);
 
         yourListView.setAdapter(customAdapter);
 

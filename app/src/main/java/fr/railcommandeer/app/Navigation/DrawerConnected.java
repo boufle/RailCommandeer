@@ -30,6 +30,7 @@ import com.mikepenz.materialize.util.UIUtils;
 import com.squareup.picasso.Picasso;
 import fr.railcommandeer.app.MainActivity;
 import fr.railcommandeer.app.R;
+import fr.railcommandeer.app.Utils.ClientLog;
 import fr.railcommandeer.app.Utils.Gravatar;
 
 /**
@@ -65,7 +66,7 @@ public class DrawerConnected {
         });
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
-        IProfile profile = new ProfileDrawerItem().withName("Benjamin Penot").withEmail("bouflelol@gmail.com").withIcon(Gravatar.gravatarUrl("theobeaudenon@yahoo.fr"));
+        IProfile profile = new ProfileDrawerItem().withName(ClientLog.utilisateurs.getNom() +"  " +ClientLog.utilisateurs.getPrenom()).withEmail(ClientLog.utilisateurs.getEmail()).withIcon(Gravatar.gravatarUrl("theobeaudenon@yahoo.fr"));
 
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()

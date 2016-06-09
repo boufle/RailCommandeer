@@ -1,15 +1,20 @@
 package fr.railcommandeer.app.Navigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import com.dd.CircularProgressButton;
 import com.flaviofaria.kenburnsview.KenBurnsView;
+import fr.railcommandeer.app.MainActivity;
+import fr.railcommandeer.app.Materials.SearchTrainActivity;
 import fr.railcommandeer.app.R;
+import fr.railcommandeer.app.Utils.ClientUnirest;
 
 /**
  * fr.railcommandeer.app.Navigation
@@ -39,11 +44,31 @@ public class LoginDialog extends AppCompatActivity {
 
 
     public void login(View view) {
-        EditText pass = (EditText) findViewById(R.id.password);
-        EditText user = (EditText) findViewById(R.id.txt_name);
+        final EditText pass = (EditText) findViewById(R.id.password);
+        final EditText user = (EditText) findViewById(R.id.txt_name);
         CircularProgressButton btn = (CircularProgressButton) findViewById(R.id.btn_login);
         btn.setIndeterminateProgressMode(true);
         btn.setProgress(1);
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ClientUnirest clientUnirest = new ClientUnirest();
+                if (clientUnirest.isConnectionCheck(user.getText().toString(),pass.getText().toString()))
+                {
+                    MainActivity.isConnected = true;
+                    Intent intent = null;
+                    intent = new Intent(LoginDialog.this, MainActivity.class);
+
+                    if (intent != null) {
+                        LoginDialog.this.startActivity(intent);
+                    }
+                }
+
+            }
+        });
+        thread.start();
+
       //  user.getTextString();
     }
 

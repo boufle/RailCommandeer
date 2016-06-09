@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <TextView
+            android:id="@+id/heureDeDepart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="8dp"
+            android:paddingBottom="20dp"
+            android:textSize="18sp"
+            android:text="test"
+            android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/heureDarrivee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="8dp"
+            android:paddingTop="35dp"
+            android:paddingBottom="20dp"
+            android:textSize="18sp"
+            android:text="test"
+            android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/spacer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="80dp"
+            android:textSize="18sp"
+            android:text="|"
+            android:textStyle="bold" />
+
+
+    <TextView
+            android:id="@+id/dureelb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="100dp"
+            android:textSize="18sp"
+            android:text="Durée :"
+            android:textStyle="normal" />
+
+    <TextView
+            android:id="@+id/duree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="160dp"
+            android:textSize="18sp"
+            android:text="test"
+            android:textStyle="bold" />
+
+
+<!--    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+          />-->
+
+
+
+</RelativeLayout>
