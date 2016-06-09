@@ -11,7 +11,7 @@ public class PossibilityReponse implements Serializable {
 
     ArrayList<CorrespondanceReponse> correspondanceReponses = new ArrayList<CorrespondanceReponse>();
     Integer pos = null;
-
+    double prix;
     Integer distancetotale = null;
     Date Depart = null;
     Date ArrDate = null;
@@ -54,5 +54,12 @@ public class PossibilityReponse implements Serializable {
 
     public void setPos(Integer pos) {
         this.pos = pos;
+    }
+    public double getPrix() {
+        return prix;
+    }
+
+    public void setPrix(double prix) {
+        this.prix = prix;
     }
 }

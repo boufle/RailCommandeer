@@ -36,12 +36,18 @@
                         android:text="Gare Arrivée"
                         android:id="@+id/gareA"/>
             </LinearLayout>
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Large Text"
-                    android:id="@+id/prix" android:gravity="center_vertical|center_horizontal"/>
+            <Button
+                    android:id="@+id/prixbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/round_button"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="hello"
+                    android:textColor="#fff" android:layout_gravity="center"/>
+
         </LinearLayout>
         <ListView
                 android:layout_width="wrap_content"

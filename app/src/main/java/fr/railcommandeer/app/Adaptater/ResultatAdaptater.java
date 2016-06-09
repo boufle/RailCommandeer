@@ -81,59 +81,12 @@ public class ResultatAdaptater extends BaseAdapter {
                 // context.GetClicked(position);
 
                 Gson gson = new Gson();
-                PossibilityReponse deal =  gson.fromJson(" {\n" +
+                PossibilityReponse deal =  gson.fromJson("{\n" +
                         "        \"correspondanceReponses\": [\n" +
                         "          {\n" +
-                        "            \"heureD\": \"Nov 5, 2016 4:36:39 AM\",\n" +
-                        "            \"heureA\": \"Nov 5, 2016 12:17:00 PM\",\n" +
+                        "            \"heureD\": \"Nov 5, 2016 4:27:27 AM\",\n" +
+                        "            \"heureA\": \"Nov 5, 2016 7:26:12 AM\",\n" +
                         "            \"gareD\": {\n" +
-                        "              \"id\": 6,\n" +
-                        "              \"nom_gare\": \"Gare Matabiau\",\n" +
-                        "              \"gps\": {\n" +
-                        "                \"x\": 44,\n" +
-                        "                \"y\": 2\n" +
-                        "              },\n" +
-                        "              \"code_postal\": 31000,\n" +
-                        "              \"ville\": \"Toulouse\"\n" +
-                        "            },\n" +
-                        "            \"gareA\": {\n" +
-                        "              \"id\": 3,\n" +
-                        "              \"nom_gare\": \"Gare de Lyon\",\n" +
-                        "              \"gps\": {\n" +
-                        "                \"x\": 48,\n" +
-                        "                \"y\": 2\n" +
-                        "              },\n" +
-                        "              \"code_postal\": 75000,\n" +
-                        "              \"ville\": \"Paris\"\n" +
-                        "            },\n" +
-                        "            \"duree\": 27621,\n" +
-                        "            \"km\": 837,\n" +
-                        "            \"ligne\": \"A\",\n" +
-                        "            \"train\": {\n" +
-                        "              \"id\": 45181,\n" +
-                        "              \"surplus\": 0,\n" +
-                        "              \"Date_depart\": \"Nov 4, 2016 6:52:00 PM\",\n" +
-                        "              \"nbr_place\": 100,\n" +
-                        "              \"ligne\": {\n" +
-                        "                \"id\": 1,\n" +
-                        "                \"nomLigne\": \"A\"\n" +
-                        "              }\n" +
-                        "            }\n" +
-                        "          },\n" +
-                        "          {\n" +
-                        "            \"heureD\": \"Nov 5, 2016 1:05:36 PM\",\n" +
-                        "            \"heureA\": \"Nov 5, 2016 4:21:24 PM\",\n" +
-                        "            \"gareD\": {\n" +
-                        "              \"id\": 3,\n" +
-                        "              \"nom_gare\": \"Gare de Lyon\",\n" +
-                        "              \"gps\": {\n" +
-                        "                \"x\": 48,\n" +
-                        "                \"y\": 2\n" +
-                        "              },\n" +
-                        "              \"code_postal\": 75000,\n" +
-                        "              \"ville\": \"Paris\"\n" +
-                        "            },\n" +
-                        "            \"gareA\": {\n" +
                         "              \"id\": 10,\n" +
                         "              \"nom_gare\": \"Gare Saint-Charles\",\n" +
                         "              \"gps\": {\n" +
@@ -143,23 +96,33 @@ public class ResultatAdaptater extends BaseAdapter {
                         "              \"code_postal\": 13000,\n" +
                         "              \"ville\": \"Marseille\"\n" +
                         "            },\n" +
-                        "            \"duree\": 11748,\n" +
-                        "            \"km\": 356,\n" +
-                        "            \"ligne\": \"E\",\n" +
+                        "            \"gareA\": {\n" +
+                        "              \"id\": 8,\n" +
+                        "              \"nom_gare\": \"Gare Pare-Dieu\",\n" +
+                        "              \"gps\": {\n" +
+                        "                \"x\": 46,\n" +
+                        "                \"y\": 5\n" +
+                        "              },\n" +
+                        "              \"code_postal\": 69000,\n" +
+                        "              \"ville\": \"Lyon\"\n" +
+                        "            },\n" +
+                        "            \"duree\": 10725,\n" +
+                        "            \"km\": 325,\n" +
+                        "            \"ligne\": \"F\",\n" +
                         "            \"train\": {\n" +
-                        "              \"id\": 45263,\n" +
+                        "              \"id\": 45210,\n" +
                         "              \"surplus\": 0,\n" +
-                        "              \"Date_depart\": \"Nov 5, 2016 7:18:00 AM\",\n" +
+                        "              \"Date_depart\": \"Nov 4, 2016 10:36:00 PM\",\n" +
                         "              \"nbr_place\": 100,\n" +
                         "              \"ligne\": {\n" +
-                        "                \"id\": 5,\n" +
-                        "                \"nomLigne\": \"E\"\n" +
+                        "                \"id\": 6,\n" +
+                        "                \"nomLigne\": \"F\"\n" +
                         "              }\n" +
                         "            }\n" +
                         "          },\n" +
                         "          {\n" +
-                        "            \"heureD\": \"Nov 5, 2016 5:31:42 PM\",\n" +
-                        "            \"heureA\": \"Nov 5, 2016 8:30:27 PM\",\n" +
+                        "            \"heureD\": \"Nov 5, 2016 7:59:27 AM\",\n" +
+                        "            \"heureA\": \"Nov 5, 2016 11:15:15 AM\",\n" +
                         "            \"gareD\": {\n" +
                         "              \"id\": 8,\n" +
                         "              \"nom_gare\": \"Gare Pare-Dieu\",\n" +
@@ -171,34 +134,72 @@ public class ResultatAdaptater extends BaseAdapter {
                         "              \"ville\": \"Lyon\"\n" +
                         "            },\n" +
                         "            \"gareA\": {\n" +
-                        "              \"id\": 10,\n" +
-                        "              \"nom_gare\": \"Gare Saint-Charles\",\n" +
+                        "              \"id\": 3,\n" +
+                        "              \"nom_gare\": \"Gare de Lyon\",\n" +
                         "              \"gps\": {\n" +
-                        "                \"x\": 43,\n" +
-                        "                \"y\": 5\n" +
+                        "                \"x\": 48,\n" +
+                        "                \"y\": 2\n" +
                         "              },\n" +
-                        "              \"code_postal\": 13000,\n" +
-                        "              \"ville\": \"Marseille\"\n" +
+                        "              \"code_postal\": 75000,\n" +
+                        "              \"ville\": \"Paris\"\n" +
                         "            },\n" +
-                        "            \"duree\": 10725,\n" +
-                        "            \"km\": 325,\n" +
-                        "            \"ligne\": \"C\",\n" +
+                        "            \"duree\": 11748,\n" +
+                        "            \"km\": 356,\n" +
+                        "            \"ligne\": \"B\",\n" +
                         "            \"train\": {\n" +
-                        "              \"id\": 45303,\n" +
+                        "              \"id\": 45212,\n" +
                         "              \"surplus\": 0,\n" +
-                        "              \"Date_depart\": \"Nov 5, 2016 2:39:00 PM\",\n" +
+                        "              \"Date_depart\": \"Nov 4, 2016 11:01:00 PM\",\n" +
                         "              \"nbr_place\": 100,\n" +
                         "              \"ligne\": {\n" +
-                        "                \"id\": 3,\n" +
-                        "                \"nomLigne\": \"C\"\n" +
+                        "                \"id\": 2,\n" +
+                        "                \"nomLigne\": \"B\"\n" +
+                        "              }\n" +
+                        "            }\n" +
+                        "          },\n" +
+                        "          {\n" +
+                        "            \"heureD\": \"Nov 5, 2016 12:00:18 PM\",\n" +
+                        "            \"heureA\": \"Nov 5, 2016 7:40:39 PM\",\n" +
+                        "            \"gareD\": {\n" +
+                        "              \"id\": 3,\n" +
+                        "              \"nom_gare\": \"Gare de Lyon\",\n" +
+                        "              \"gps\": {\n" +
+                        "                \"x\": 48,\n" +
+                        "                \"y\": 2\n" +
+                        "              },\n" +
+                        "              \"code_postal\": 75000,\n" +
+                        "              \"ville\": \"Paris\"\n" +
+                        "            },\n" +
+                        "            \"gareA\": {\n" +
+                        "              \"id\": 6,\n" +
+                        "              \"nom_gare\": \"Gare Matabiau\",\n" +
+                        "              \"gps\": {\n" +
+                        "                \"x\": 44,\n" +
+                        "                \"y\": 2\n" +
+                        "              },\n" +
+                        "              \"code_postal\": 31000,\n" +
+                        "              \"ville\": \"Toulouse\"\n" +
+                        "            },\n" +
+                        "            \"duree\": 27621,\n" +
+                        "            \"km\": 837,\n" +
+                        "            \"ligne\": \"D\",\n" +
+                        "            \"train\": {\n" +
+                        "              \"id\": 45274,\n" +
+                        "              \"surplus\": 0,\n" +
+                        "              \"Date_depart\": \"Nov 5, 2016 9:56:00 AM\",\n" +
+                        "              \"nbr_place\": 100,\n" +
+                        "              \"ligne\": {\n" +
+                        "                \"id\": 4,\n" +
+                        "                \"nomLigne\": \"D\"\n" +
                         "              }\n" +
                         "            }\n" +
                         "          }\n" +
                         "        ],\n" +
                         "        \"pos\": 0,\n" +
                         "        \"distancetotale\": 1518,\n" +
-                        "        \"Depart\": \"Nov 5, 2016 4:36:39 AM\",\n" +
-                        "        \"ArrDate\": \"Nov 5, 2016 8:30:27 PM\"\n" +
+                        "        \"Depart\": \"Nov 5, 2016 4:27:27 AM\",\n" +
+                        "        \"ArrDate\": \"Nov 5, 2016 7:40:39 PM\",\n" +
+                        "        \"prix\": 303.6\n" +
                         "      }", PossibilityReponse.class);
 
                 context.gointent(deal);

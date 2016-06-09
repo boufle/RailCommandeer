@@ -28,15 +28,23 @@ public class CorrespondanceAdaptater extends BaseAdapter {
     private Application context;
 
     public CorrespondanceAdaptater(Application context, ArrayList<CorrespondanceReponse> list) {
-        this.list = list;
+
+        ArrayList<CorrespondanceReponse> list2 = new ArrayList<>();
+        for (CorrespondanceReponse correspondanceReponse : list) {
+            list2.add(correspondanceReponse);
+            list2.add(correspondanceReponse);
+        }
+        list2.add(list2.get(list2.size()-1));
+        this.list = list2;
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
+
     }
 
 
     @Override
     public int getCount() {
-        return 8;
+        return list.size();
     }
 
     @Override
@@ -48,12 +56,55 @@ public class CorrespondanceAdaptater extends BaseAdapter {
     public long getItemId(int position) {
         return 0;
     }
-
+    String arr = "";
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        convertView= layoutInflater.inflate(R.layout.research_card, null);
+        String arr = "";
+        String dep = "";
+        if (position % 2 == 0 ){
+            //route
+            System.out.println(position);
+            if(position ==0 ){ //dep
+                convertView= layoutInflater.inflate(R.layout.coresp_card1, null);
+            }else   if(position == list.size()-1 ){ //last gare
+                convertView= layoutInflater.inflate(R.layout.coresp_card2, null);
+            }else { //corespondance
+                convertView= layoutInflater.inflate(R.layout.coresp_card3, null);
+            }
 
-       // Button add =(Button) convertView.findViewById(R.id.add_btn);
+            TextView add =(TextView) convertView.findViewById(R.id.heure);
+            TextView gare =(TextView) convertView.findViewById(R.id.gare);
+            TextView garenew =(TextView) convertView.findViewById(R.id.garenew);
+
+            if(position != list.size()-1 ) {
+                garenew.setText(list.get(position).getGareD().getNom_gare());
+            }else {
+                garenew.setText(list.get(position).getGareA().getNom_gare());
+            }
+
+            if(position !=0 ){
+                arr = "Arrivé : " + list.get(position-2).getHeureA().getDay() +"/"+list.get(position-2).getHeureA().getMonth() +" "+ list.get(position-2).getHeureA().getHours() +":"+list.get(position-2).getHeureA().getMinutes();
+            }
+            if(position != list.size()-1 ) {
+                dep = "Depart : " + list.get(position).getHeureD().getDay() + "/" + list.get(position).getHeureD().getMonth() + " " + list.get(position).getHeureD().getHours() + ":" + list.get(position).getHeureD().getMinutes();
+            }
+            gare.setText(arr);
+            add.setText( dep);
+
+
+        }else {
+            //corres
+            convertView= layoutInflater.inflate(R.layout.coresp_card, null);
+            TextView add =(TextView) convertView.findViewById(R.id.heure);
+            TextView gare =(TextView) convertView.findViewById(R.id.gare);
+           int totalsecondes = list.get(position).getDuree();
+
+            int secondes = totalsecondes % 60;
+            int minutes = (totalsecondes / 60) % 60;
+            int heures = (totalsecondes / (60 * 60));
+            gare.setText(heures+"h"+minutes);
+            add.setText(list.get(position).getKm()+"km " );
+        }
 
 
         return convertView;
