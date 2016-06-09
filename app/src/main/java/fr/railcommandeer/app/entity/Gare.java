@@ -3,18 +3,19 @@ package fr.railcommandeer.app.entity;
 import android.graphics.Point;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by alexa on 02/06/2016.
  */
-public class Gare {
+public class Gare implements Serializable {
 
     private long id;
 
     private String nom_gare;
 
-    private Point gps;
+    private transient Point gps;
 
     public String typetrain;
 

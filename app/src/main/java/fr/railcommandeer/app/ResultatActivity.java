@@ -1,5 +1,6 @@
 package fr.railcommandeer.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -8,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.ListView;
 import fr.railcommandeer.app.Adaptater.DealAdaptater;
 import fr.railcommandeer.app.Adaptater.ResultatAdaptater;
+import fr.railcommandeer.app.ReponseRest.PossibilityReponse;
 
 import java.util.ArrayList;
 
@@ -37,13 +39,28 @@ public class ResultatActivity extends AppCompatActivity {
         list3.add("4h");
         list3.add("5h10");
 
-        ResultatAdaptater customAdapter = new ResultatAdaptater(getApplication(),list,list2,list3);
+        ResultatAdaptater customAdapter = new ResultatAdaptater(this,list,list2,list3);
 
         yourListView.setAdapter(customAdapter);
 
         //set the back arrow in the toolbar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);
+
+
+    }
+
+    public void gointent(PossibilityReponse deal) {
+       try{
+           Intent intent = null;
+           intent = new Intent(ResultatActivity.this, PossibilityActivity.class);
+           intent.putExtra("rep",deal );
+           intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+           ResultatActivity.this.startActivity(intent);
+
+       }catch (Exception e){
+           System.out.println(e);
+       }
 
 
     }

@@ -1,5 +1,6 @@
 package fr.railcommandeer.app.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by alexa on 02/06/2016.
  */
 
-public class Trains {
+public class Trains implements Serializable{
 
     private int id;
 

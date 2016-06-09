@@ -66,7 +66,7 @@ public class DrawerConnected {
         });
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
-        IProfile profile = new ProfileDrawerItem().withName(ClientLog.utilisateurs.getNom() +"  " +ClientLog.utilisateurs.getPrenom()).withEmail(ClientLog.utilisateurs.getEmail()).withIcon(Gravatar.gravatarUrl("theobeaudenon@yahoo.fr"));
+        IProfile profile = new ProfileDrawerItem().withName(ClientLog.utilisateurs.getNom() +"  " +ClientLog.utilisateurs.getPrenom()).withEmail(ClientLog.utilisateurs.getEmail()).withIcon(Gravatar.gravatarUrl(ClientLog.utilisateurs.getEmail()));
 
         // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()

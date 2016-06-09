@@ -1,6 +1,5 @@
 package fr.railcommandeer.app.entity;
 
-import okhttp3.Route;
 
 import java.io.Serializable;
 import java.util.List;
